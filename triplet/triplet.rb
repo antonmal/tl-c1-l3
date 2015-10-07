@@ -21,6 +21,7 @@ class Triplet
     bottom_limit  = args[:min_factor] || 3    # default value to simplify the method
     bottom_limit  = 3 if bottom_limit < 3     # smallest pythagorean triplet starts with 3
     upper_limit   = args[:max_factor] || 100  # default value to avoid errors
+    return [] if upper_limit < bottom_limit
     sum_filter    = args[:sum] || nil
 
     pythagorean_triplets = []
